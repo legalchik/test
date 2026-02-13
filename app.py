@@ -10,7 +10,6 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
 
-
 # webhook settings
 WEBHOOK_HOST = f'https://legalchik.onrender.com'
 WEBHOOK_PATH = f'/webhook/{TOKEN}'
@@ -18,7 +17,7 @@ WEBHOOK_URL = f'{WEBHOOK_HOST}{WEBHOOK_PATH}'
 
 # webserver settings
 WEBAPP_HOST = '0.0.0.0'
-WEBAPP_PORT = os.getenv('PORT', default=8000)
+WEBAPP_PORT = int(os.getenv('PORT', 8000))
 
 
 async def on_startup(dispatcher):
